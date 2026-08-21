@@ -983,5 +983,26 @@ window.onload = () => {
   requestAnimationFrame(loop);
 };
 </script>
+window.addEventListener("error", function(e) {
+  document.body.innerHTML = `
+    <div style="
+      position:fixed;
+      inset:0;
+      background:#030712;
+      color:white;
+      padding:30px;
+      font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+      overflow:auto;
+      z-index:999999;
+    ">
+      <h2 style="color:#38bdf8;">Rainy Skyline — Erro de inicialização</h2>
+      <p>${e.message}</p>
+      <p style="color:#94a3b8;font-size:13px;">
+        Linha: ${e.lineno || "desconhecida"}
+      </p>
+    </div>
+  `;
+});
+</script>
 </body>
 </html>
