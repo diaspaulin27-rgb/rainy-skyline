@@ -729,7 +729,7 @@ class Particle {
 
 // Otimização: menos partículas para preservar bateria em celulares baixos
 const rainParticles = Array.from({ length: 120 }, () => new Particle());
-const glassDrops = Array.from({ length: 30 }, () => new GlassDrop());
+const glassDrops = [];
 
 class GlassDrop {
   constructor() { this.reset(true); }
